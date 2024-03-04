@@ -1,7 +1,7 @@
 /*
  * @Author: lvxr
  * @Date: 2024-03-03 15:01:53
- * @LastEditTime: 2024-03-03 20:25:53
+ * @LastEditTime: 2024-03-04 21:35:28
  */
 #ifndef EVENTLOOP_H
 #define EVENTLOOP_H
@@ -35,10 +35,17 @@ public:
 
     // mainReactor用于唤醒Subreactor的
     void runInLoop(Functor cb);   // mainReactor用于唤醒Subreactor的
-    void queueInLoop(Functor cb); //
+    void queueInLoop(Functor cb); 
+    
     void wakeup();
+
+    // 更新Channel，在Channel中被调用，Channel将自己加入Loop
     void updateChannel(Channel *channel);
+
+    // 移除某个Channel
     void removeChannel(Channel *channel);
+
+    // 判断是否拥有某个Channel
     bool hasChannel(Channel *channel);
 
     // 判断当前的eventloop对象是否在自己的线程里面
@@ -54,14 +61,14 @@ private:
     std::atomic<bool> callingPendingFunctors_; // 标识当前loop是否有需要执行回调操作
     const pid_t threadId_;                     // 当前loop所在的线程的id
     TimeStamp pollReturnTime_;                 // poller返回发生事件时间点
-    std::unique_ptr<Poller> poller_;           // 一个EventLoop需要一个poller，这个poller其实就是操控这个EventLoop的对象。
+    std::unique_ptr<Poller> poller_;           // 一个EventLoop需要一个poller，这个poller其实就是操控这个EventLoop的对象
 
-    int wakeupFd_; // 主要作用，当mainLoop获取一个新用户的channel通过轮询算法选择一个subloop(subreactor)来处理channel。
+    int wakeupFd_; // 主要作用，当mainLoop获取一个新用户的channel通过轮询算法选择一个subloop(subreactor)来处理channel
     std::unique_ptr<Channel> wakeupChannel_;
     ChannelList activeChannels_;
     Channel *currentActiveChannel_;
-    std::vector<Functor> pendingFunctors_; // 存储loop需要执行的所有回调操作。
-    std::mutex mutex_;                     // 保护上面vector容器的线程安全操作。
+    std::vector<Functor> pendingFunctors_; // 存储loop需要执行的所有回调操作
+    std::mutex mutex_;                     // 保护上面vector容器的线程安全操作
 };
 
 #endif
