@@ -1,7 +1,7 @@
 /*
  * @Author: lvxr
  * @Date: 2024-03-02 15:59:21
- * @LastEditTime: 2024-03-03 19:48:13
+ * @LastEditTime: 2024-03-05 13:49:20
  */
 #ifndef CHANNEL_H
 #define CHANNEL_H
@@ -10,7 +10,7 @@
 #include <memory>
 
 #include "noncopyable.h"
-#include "Timestamp.h"
+#include "TimeStamp.h"
 
 class EventLoop;
 
@@ -22,12 +22,12 @@ public:
     using EventCallback = std::function<void()>;
 
     // 只读事件回调
-    using ReadEventCallback = std::function<void(Timestamp)>;
+    using ReadEventCallback = std::function<void(TimeStamp)>;
 
     Channel(EventLoop *loop, int fd);
     ~Channel();
 
-    void HandlerEvent(Timestamp receive_time);
+    void HandlerEvent(TimeStamp receive_time);
 
     // 设置可读事件回调函数
     void setReadCallback(ReadEventCallback cb) { read_callback_ = std::move(cb); }
@@ -134,6 +134,6 @@ private:
     EventCallback write_callback_;
     EventCallback close_callback_;
     EventCallback error_callback_;
-}
+};
 
 #endif

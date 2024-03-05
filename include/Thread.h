@@ -1,7 +1,7 @@
 /*
  * @Author: lvxr
  * @Date: 2024-03-04 13:04:45
- * @LastEditTime: 2024-03-04 13:30:36
+ * @LastEditTime: 2024-03-05 15:06:25
  */
 #ifndef THREAD_H
 #define THREAD_H
@@ -10,6 +10,8 @@
 #include <thread>
 #include <memory>
 #include <atomic>
+#include <unistd.h>
+#include <string>
 
 #include "noncopyable.h"
 

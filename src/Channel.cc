@@ -1,11 +1,12 @@
 /*
  * @Author: lvxr
  * @Date: 2024-03-02 17:07:12
- * @LastEditTime: 2024-03-03 19:43:00
+ * @LastEditTime: 2024-03-05 13:51:30
  */
 
 #include "Channel.h"
 #include "Logger.h"
+#include "EventLoop.h"
 #include <sys/epoll.h>
 
 const int Channel::kNoneEvent = 0;
@@ -13,7 +14,7 @@ const int Channel::kReadEvent = EPOLLIN | EPOLLPRI;
 const int Channel::kWriteEvent = EPOLLOUT;
 
 Channel::Channel(EventLoop *loop, int fd)
-    : loop_(loop), fd_(fd), events_(0), revents_(0), index_(-1), tied_(false) {}
+    : loop_(loop), fd_(fd), events_(0), revents_(0), status_(-1), tied_(false) {}
 
 Channel::~Channel() {}
 
@@ -57,7 +58,7 @@ void Channel::HandlerEvent(TimeStamp receiveTime)
         HandleEventWithGuard(receiveTime);
 }
 
-void Channel::HandleEventWithGuard(Timestamp receiveTime)
+void Channel::HandleEventWithGuard(TimeStamp receiveTime)
 {
     // 打印日志
     LOG_INFO("channel HandleEvent revents:%d", revents_);

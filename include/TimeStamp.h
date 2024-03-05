@@ -1,7 +1,7 @@
 /*
  * @Author: lvxr
  * @Date: 2024-03-02 16:02:33
- * @LastEditTime: 2024-03-03 14:38:31
+ * @LastEditTime: 2024-03-05 13:58:33
  */
 #ifndef TIMESTAMP_H
 #define TIMESTAMP_H
@@ -14,6 +14,8 @@
 class TimeStamp
 {
 public:
+    TimeStamp(){}
+
     // 带参构造函数，禁止隐式转换
     explicit TimeStamp(int64_t secondSinceEpoch);
 

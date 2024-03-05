@@ -1,7 +1,7 @@
 /*
  * @Author: lvxr
  * @Date: 2024-03-04 16:55:54
- * @LastEditTime: 2024-03-05 13:34:04
+ * @LastEditTime: 2024-03-05 13:49:35
  */
 #ifndef SOCKET_H
 #define SOCKET_H
@@ -31,6 +31,6 @@ public:
 
 private:
     const int sockfd_;
-}
+};
 
 #endif

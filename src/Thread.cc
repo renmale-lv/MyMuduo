@@ -1,7 +1,7 @@
 /*
  * @Author: lvxr
  * @Date: 2024-03-04 13:04:51
- * @LastEditTime: 2024-03-04 13:47:47
+ * @LastEditTime: 2024-03-05 14:02:21
  */
 #include "Thread.h"
 
@@ -9,7 +9,7 @@
 
 #include "CurrentThread.h"
 
-atomic<int> Thread::numCreated_(0);
+std::atomic<int> Thread::numCreated_(0);
 
 Thread::Thread(ThreadFunc func, const std::string &name)
     : started_(false),
@@ -24,7 +24,7 @@ Thread::Thread(ThreadFunc func, const std::string &name)
 Thread::~Thread()
 {
     // 分离线程
-    if (started && !joined_)
+    if (started_ && !joined_)
         thread_->detach();
 }
 
@@ -35,10 +35,10 @@ void Thread::start()
     // 初始化信号量为0
     sem_init(&sem, false, 0);
     // start时才实例化线程
-    thread_ = std::shared_ptr<std::thread>(new thread(
+    thread_ = std::shared_ptr<std::thread>(new std::thread(
         [&]()
         {
-            tid_=Currentthread::tid();
+            tid_=CurrentThread::tid();
             sem_post(&sem);
             func_(); }));
     // 阻塞只要线程开始执行func_函数，目的时为了获取线程tid

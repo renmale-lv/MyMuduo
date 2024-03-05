@@ -1,7 +1,7 @@
 /*
  * @Author: lvxr
  * @Date: 2024-03-03 15:02:02
- * @LastEditTime: 2024-03-04 21:30:41
+ * @LastEditTime: 2024-03-05 13:59:43
  */
 #include "EventLoop.h"
 
@@ -63,7 +63,7 @@ void EventLoop::handleRead()
     uint64_t one = 1;
     ssize_t n = read(wakeupFd_, &one, sizeof(one)); // mainReactor给subreactor发消息，subReactor通过wakeupFd_感知。
     if (n != sizeof(one))
-        LOG_ERROR("EventLoop::handleRead() reads %d bytes instead of 8", n);
+        LOG_ERROR("EventLoop::handleRead() reads %ld bytes instead of 8", n);
 }
 
 void EventLoop::loop()

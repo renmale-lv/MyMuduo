@@ -1,7 +1,7 @@
 /*
  * @Author: lvxr
  * @Date: 2024-03-04 13:55:04
- * @LastEditTime: 2024-03-04 14:36:13
+ * @LastEditTime: 2024-03-05 15:02:13
  */
 #ifndef INET_ADDRESS_H
 #define INET_ADDRESS_H
@@ -19,7 +19,7 @@ public:
     std::string toIp() const;
     std::string toIpPort() const;
     uint16_t toPort() const;
-    const sockaddr_in *getSockAddr() const;
+    const sockaddr_in *getSockAddr() const { return &addr_; }
     void setSockAddr(const sockaddr_in &addr) { addr_ = addr; }
 
 private:

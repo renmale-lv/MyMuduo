@@ -1,13 +1,13 @@
 /*
  * @Author: lvxr
  * @Date: 2024-03-02 17:09:06
- * @LastEditTime: 2024-03-02 19:28:14
+ * @LastEditTime: 2024-03-05 14:00:38
  */
 #include "Logger.h"
 
 #include <iostream>
 
-#include "Timestamp.h"
+#include "TimeStamp.h"
 
 Logger &Logger::Instance()
 {
@@ -50,5 +50,5 @@ void Logger::log(std::string msg)
         break;
     }
     // 打印时间和消息
-    std::cout << Timestamp::now().toString() << " : " << msg << std::endl;
+    std::cout << TimeStamp::now().toString() << " : " << msg << std::endl;
 }

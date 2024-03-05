@@ -19,7 +19,7 @@ set(CMAKE_DEPENDS_CHECK_CXX
   "/home/ubuntu/socket/MyMuduo/src/TcpConnection.cc" "/home/ubuntu/socket/MyMuduo/lib/CMakeFiles/MyMuduo.dir/src/TcpConnection.cc.o"
   "/home/ubuntu/socket/MyMuduo/src/TcpServer.cc" "/home/ubuntu/socket/MyMuduo/lib/CMakeFiles/MyMuduo.dir/src/TcpServer.cc.o"
   "/home/ubuntu/socket/MyMuduo/src/Thread.cc" "/home/ubuntu/socket/MyMuduo/lib/CMakeFiles/MyMuduo.dir/src/Thread.cc.o"
-  "/home/ubuntu/socket/MyMuduo/src/Timestamp.cc" "/home/ubuntu/socket/MyMuduo/lib/CMakeFiles/MyMuduo.dir/src/Timestamp.cc.o"
+  "/home/ubuntu/socket/MyMuduo/src/TimeStamp.cc" "/home/ubuntu/socket/MyMuduo/lib/CMakeFiles/MyMuduo.dir/src/TimeStamp.cc.o"
   )
 set(CMAKE_CXX_COMPILER_ID "GNU")
 

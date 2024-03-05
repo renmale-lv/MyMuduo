@@ -1,0 +1,1 @@
+/usr/bin/c++  -pthread   CMakeFiles/example.dir/main.cpp.o  -o example  -Wl,-rpath,/home/ubuntu/socket/MyMuduo/example/../lib ../../lib/libMyMuduo.so 

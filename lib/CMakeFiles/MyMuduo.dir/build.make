@@ -252,18 +252,18 @@ CMakeFiles/MyMuduo.dir/src/Thread.cc.s: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling CXX source to assembly CMakeFiles/MyMuduo.dir/src/Thread.cc.s"
 	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S /home/ubuntu/socket/MyMuduo/src/Thread.cc -o CMakeFiles/MyMuduo.dir/src/Thread.cc.s
 
-CMakeFiles/MyMuduo.dir/src/Timestamp.cc.o: CMakeFiles/MyMuduo.dir/flags.make
-CMakeFiles/MyMuduo.dir/src/Timestamp.cc.o: ../src/Timestamp.cc
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/home/ubuntu/socket/MyMuduo/lib/CMakeFiles --progress-num=$(CMAKE_PROGRESS_16) "Building CXX object CMakeFiles/MyMuduo.dir/src/Timestamp.cc.o"
-	/usr/bin/c++  $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -o CMakeFiles/MyMuduo.dir/src/Timestamp.cc.o -c /home/ubuntu/socket/MyMuduo/src/Timestamp.cc
+CMakeFiles/MyMuduo.dir/src/TimeStamp.cc.o: CMakeFiles/MyMuduo.dir/flags.make
+CMakeFiles/MyMuduo.dir/src/TimeStamp.cc.o: ../src/TimeStamp.cc
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/home/ubuntu/socket/MyMuduo/lib/CMakeFiles --progress-num=$(CMAKE_PROGRESS_16) "Building CXX object CMakeFiles/MyMuduo.dir/src/TimeStamp.cc.o"
+	/usr/bin/c++  $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -o CMakeFiles/MyMuduo.dir/src/TimeStamp.cc.o -c /home/ubuntu/socket/MyMuduo/src/TimeStamp.cc
 
-CMakeFiles/MyMuduo.dir/src/Timestamp.cc.i: cmake_force
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Preprocessing CXX source to CMakeFiles/MyMuduo.dir/src/Timestamp.cc.i"
-	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E /home/ubuntu/socket/MyMuduo/src/Timestamp.cc > CMakeFiles/MyMuduo.dir/src/Timestamp.cc.i
+CMakeFiles/MyMuduo.dir/src/TimeStamp.cc.i: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Preprocessing CXX source to CMakeFiles/MyMuduo.dir/src/TimeStamp.cc.i"
+	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E /home/ubuntu/socket/MyMuduo/src/TimeStamp.cc > CMakeFiles/MyMuduo.dir/src/TimeStamp.cc.i
 
-CMakeFiles/MyMuduo.dir/src/Timestamp.cc.s: cmake_force
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling CXX source to assembly CMakeFiles/MyMuduo.dir/src/Timestamp.cc.s"
-	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S /home/ubuntu/socket/MyMuduo/src/Timestamp.cc -o CMakeFiles/MyMuduo.dir/src/Timestamp.cc.s
+CMakeFiles/MyMuduo.dir/src/TimeStamp.cc.s: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling CXX source to assembly CMakeFiles/MyMuduo.dir/src/TimeStamp.cc.s"
+	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S /home/ubuntu/socket/MyMuduo/src/TimeStamp.cc -o CMakeFiles/MyMuduo.dir/src/TimeStamp.cc.s
 
 # Object files for target MyMuduo
 MyMuduo_OBJECTS = \
@@ -282,7 +282,7 @@ MyMuduo_OBJECTS = \
 "CMakeFiles/MyMuduo.dir/src/TcpConnection.cc.o" \
 "CMakeFiles/MyMuduo.dir/src/TcpServer.cc.o" \
 "CMakeFiles/MyMuduo.dir/src/Thread.cc.o" \
-"CMakeFiles/MyMuduo.dir/src/Timestamp.cc.o"
+"CMakeFiles/MyMuduo.dir/src/TimeStamp.cc.o"
 
 # External object files for target MyMuduo
 MyMuduo_EXTERNAL_OBJECTS =
@@ -302,7 +302,7 @@ libMyMuduo.so: CMakeFiles/MyMuduo.dir/src/Socket.cc.o
 libMyMuduo.so: CMakeFiles/MyMuduo.dir/src/TcpConnection.cc.o
 libMyMuduo.so: CMakeFiles/MyMuduo.dir/src/TcpServer.cc.o
 libMyMuduo.so: CMakeFiles/MyMuduo.dir/src/Thread.cc.o
-libMyMuduo.so: CMakeFiles/MyMuduo.dir/src/Timestamp.cc.o
+libMyMuduo.so: CMakeFiles/MyMuduo.dir/src/TimeStamp.cc.o
 libMyMuduo.so: CMakeFiles/MyMuduo.dir/build.make
 libMyMuduo.so: CMakeFiles/MyMuduo.dir/link.txt
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --bold --progress-dir=/home/ubuntu/socket/MyMuduo/lib/CMakeFiles --progress-num=$(CMAKE_PROGRESS_17) "Linking CXX shared library libMyMuduo.so"

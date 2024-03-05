@@ -1,7 +1,7 @@
 /*
  * @Author: lvxr
  * @Date: 2024-03-03 14:09:14
- * @LastEditTime: 2024-03-03 14:46:09
+ * @LastEditTime: 2024-03-05 13:52:58
  */
 #include "EpollPoller.h"
 
@@ -62,7 +62,7 @@ void EpollPoller::updateChannel(Channel *channel)
         {
             // 从epfd中删除一个fd；
             update(EPOLL_CTL_DEL, channel);
-            channel->set_index(kDeleted);
+            channel->set_status(kDeleted);
         }
         else
         {

@@ -528,32 +528,32 @@ src/Thread.cc.s:
 	$(MAKE) -f CMakeFiles/MyMuduo.dir/build.make CMakeFiles/MyMuduo.dir/src/Thread.cc.s
 .PHONY : src/Thread.cc.s
 
-src/Timestamp.o: src/Timestamp.cc.o
+src/TimeStamp.o: src/TimeStamp.cc.o
 
-.PHONY : src/Timestamp.o
+.PHONY : src/TimeStamp.o
 
 # target to build an object file
-src/Timestamp.cc.o:
-	$(MAKE) -f CMakeFiles/MyMuduo.dir/build.make CMakeFiles/MyMuduo.dir/src/Timestamp.cc.o
-.PHONY : src/Timestamp.cc.o
+src/TimeStamp.cc.o:
+	$(MAKE) -f CMakeFiles/MyMuduo.dir/build.make CMakeFiles/MyMuduo.dir/src/TimeStamp.cc.o
+.PHONY : src/TimeStamp.cc.o
 
-src/Timestamp.i: src/Timestamp.cc.i
+src/TimeStamp.i: src/TimeStamp.cc.i
 
-.PHONY : src/Timestamp.i
+.PHONY : src/TimeStamp.i
 
 # target to preprocess a source file
-src/Timestamp.cc.i:
-	$(MAKE) -f CMakeFiles/MyMuduo.dir/build.make CMakeFiles/MyMuduo.dir/src/Timestamp.cc.i
-.PHONY : src/Timestamp.cc.i
+src/TimeStamp.cc.i:
+	$(MAKE) -f CMakeFiles/MyMuduo.dir/build.make CMakeFiles/MyMuduo.dir/src/TimeStamp.cc.i
+.PHONY : src/TimeStamp.cc.i
 
-src/Timestamp.s: src/Timestamp.cc.s
+src/TimeStamp.s: src/TimeStamp.cc.s
 
-.PHONY : src/Timestamp.s
+.PHONY : src/TimeStamp.s
 
 # target to generate assembly for a file
-src/Timestamp.cc.s:
-	$(MAKE) -f CMakeFiles/MyMuduo.dir/build.make CMakeFiles/MyMuduo.dir/src/Timestamp.cc.s
-.PHONY : src/Timestamp.cc.s
+src/TimeStamp.cc.s:
+	$(MAKE) -f CMakeFiles/MyMuduo.dir/build.make CMakeFiles/MyMuduo.dir/src/TimeStamp.cc.s
+.PHONY : src/TimeStamp.cc.s
 
 # Help Target
 help:
@@ -609,9 +609,9 @@ help:
 	@echo "... src/Thread.o"
 	@echo "... src/Thread.i"
 	@echo "... src/Thread.s"
-	@echo "... src/Timestamp.o"
-	@echo "... src/Timestamp.i"
-	@echo "... src/Timestamp.s"
+	@echo "... src/TimeStamp.o"
+	@echo "... src/TimeStamp.i"
+	@echo "... src/TimeStamp.s"
 .PHONY : help
 
 

@@ -1,7 +1,7 @@
 /*
  * @Author: lvxr
  * @Date: 2024-03-03 13:52:02
- * @LastEditTime: 2024-03-03 14:45:09
+ * @LastEditTime: 2024-03-05 15:03:31
  */
 
 #ifndef POLLER_H
@@ -23,7 +23,7 @@ public:
     using ChannelList = std::vector<Channel *>;
 
     Poller(EventLoop *loop);
-    virtual ~Poller();
+    virtual ~Poller(){}
 
     // 进行IO复用
     virtual TimeStamp poll(int timeoutMs, ChannelList *ativateChannels) = 0;

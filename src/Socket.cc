@@ -1,7 +1,7 @@
 /*
  * @Author: lvxr
  * @Date: 2024-03-04 16:55:59
- * @LastEditTime: 2024-03-05 13:33:51
+ * @LastEditTime: 2024-03-05 14:01:30
  */
 #include "Socket.h"
 #include "Logger.h"
@@ -30,7 +30,7 @@ void Socket::bindAddress(const InetAddress &localaddr)
 
 void Socket::listen()
 {
-    if (0 != listen(sockfd_, 1024))
+    if (0 != ::listen(sockfd_, 1024))
     {
         LOG_FATAL("listen sockfd:%d fail \n", sockfd_);
     }
@@ -54,7 +54,7 @@ int Socket::accept(InetAddress *peeraddr)
 
 void Socket::shutdownWrite()
 {
-    if (shutdown(sockfd_, SHUT_WR) < 0)
+    if (::shutdown(sockfd_, SHUT_WR) < 0)
     {
         LOG_ERROR("shutdownWrite error");
     }

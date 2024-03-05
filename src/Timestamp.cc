@@ -1,20 +1,20 @@
 /*
  * @Author: lvxr
  * @Date: 2024-03-02 16:06:30
- * @LastEditTime: 2024-03-02 16:33:11
+ * @LastEditTime: 2024-03-05 14:03:27
  */
 
-#include "Timestamp.h"
+#include "TimeStamp.h"
 
-Timestamp::Timestamp(int64_t secondSinceEpoch)
+TimeStamp::TimeStamp(int64_t secondSinceEpoch)
     : secondSinceEpoch_(secondSinceEpoch) {}
 
-Timestamp Timestamp::now()
+TimeStamp TimeStamp::now()
 {
-    return Timestamp(time(NULL));
+    return TimeStamp(time(NULL));
 }
 
-std::string Timestamp::toString() const
+std::string TimeStamp::toString() const
 {
     char buf[128] = {0};
     tm *tm_time = localtime(&secondSinceEpoch_);

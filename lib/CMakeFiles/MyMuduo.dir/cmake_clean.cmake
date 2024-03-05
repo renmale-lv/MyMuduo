@@ -14,7 +14,7 @@ file(REMOVE_RECURSE
   "CMakeFiles/MyMuduo.dir/src/TcpConnection.cc.o"
   "CMakeFiles/MyMuduo.dir/src/TcpServer.cc.o"
   "CMakeFiles/MyMuduo.dir/src/Thread.cc.o"
-  "CMakeFiles/MyMuduo.dir/src/Timestamp.cc.o"
+  "CMakeFiles/MyMuduo.dir/src/TimeStamp.cc.o"
   "libMyMuduo.pdb"
   "libMyMuduo.so"
 )

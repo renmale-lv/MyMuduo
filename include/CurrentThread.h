@@ -1,7 +1,7 @@
 /*
  * @Author: lvxr
  * @Date: 2024-03-03 14:50:03
- * @LastEditTime: 2024-03-03 14:53:53
+ * @LastEditTime: 2024-03-05 13:52:31
  */
 #ifndef CURRENT_THREAD_H
 #define CURRENT_THREAD_H
@@ -9,7 +9,7 @@
 #include <unistd.h>
 #include <sys/syscall.h>
 
-namespace Currentthread
+namespace CurrentThread
 {
 
     // 通过__thread 修饰的变量，在线程中地址都不一样，__thread变量每一个线程有一份独立实体，各个线程的值互不干扰
