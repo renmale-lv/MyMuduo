@@ -1,0 +1,3 @@
+/home/ubuntu/socket/MyMuduo/lib/CMakeFiles/rebuild_cache.dir
+/home/ubuntu/socket/MyMuduo/lib/CMakeFiles/edit_cache.dir
+/home/ubuntu/socket/MyMuduo/lib/CMakeFiles/MyMuduo.dir

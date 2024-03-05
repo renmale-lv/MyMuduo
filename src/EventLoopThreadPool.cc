@@ -1,7 +1,7 @@
 /*
  * @Author: lvxr
  * @Date: 2024-03-04 15:58:24
- * @LastEditTime: 2024-03-04 16:40:15
+ * @LastEditTime: 2024-03-05 10:44:27
  */
 
 #include "EventLoopThreadPool.h"
@@ -18,7 +18,7 @@ EventLoopThreadPool::EventLoopThreadPool(EventLoop *baseLoop, const std::string 
 
 EventLoopThreadPool::~EventLoopThreadPool() {}
 
-void EventLoopThreadPool::start()
+void EventLoopThreadPool::start(const ThreadInitCallback &cb)
 {
     started_ = true;
     for (int i = 0; i < numThreads_; i++)

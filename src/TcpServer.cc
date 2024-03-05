@@ -1,7 +1,7 @@
 /*
  * @Author: lvxr
  * @Date: 2024-03-04 19:55:12
- * @LastEditTime: 2024-03-04 21:10:17
+ * @LastEditTime: 2024-03-05 10:45:26
  */
 #include "TcpServer.h"
 #include "Logger.h"
@@ -54,6 +54,8 @@ TcpServer::~TcpServer()
     }
 }
 
+// setThreadNum->EventLoopThreadPool::setThreadNum
+// 然后在EventLoopThreadPool::start中会调用线程初始化回调来初始化子线程
 void TcpServer::setThreadNum(int numThreads)
 {
     threadPool_->setThreadNum(numThreads);
@@ -84,7 +86,8 @@ void TcpServer::newConnection(int sockfd, const InetAddress &peerAddr)
     bzero(&local, sizeof(local));
     socklen_t addrlen = sizeof(local);
     if (getsockname(sockfd, (sockaddr *)&local, &addrlen) < 0)
-    { // getsockname函数用于获取与某个套接字关联的本地协议地址，然后放到local里面
+    {
+        // getsockname函数用于获取与某个套接字关联的本地协议地址，然后放到local里面
         LOG_ERROR("sockets::getLocalAddr");
     }
 

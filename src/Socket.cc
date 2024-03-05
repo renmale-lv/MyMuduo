@@ -1,7 +1,7 @@
 /*
  * @Author: lvxr
  * @Date: 2024-03-04 16:55:59
- * @LastEditTime: 2024-03-04 17:02:54
+ * @LastEditTime: 2024-03-05 13:33:51
  */
 #include "Socket.h"
 #include "Logger.h"
@@ -37,17 +37,12 @@ void Socket::listen()
 }
 
 int Socket::accept(InetAddress *peeraddr)
-{ // 传进来的是个空的InetAddress对象，当accept成功了就给这个InetAddress对象设成功连接的sockaddr_in
-    /**
-     * 1. accept函数的参数不合法
-     * 2. 对返回的connfd没有设置非阻塞
-     * Reactor模型 one loop per thread
-     * poller + non-blocking IO
-     */
+{
+    // 传进来的是个空的InetAddress对象，当accept成功了就给这个InetAddress对象设成功连接的sockaddr_in
     sockaddr_in addr;
     socklen_t len = sizeof(addr);
     bzero(&addr, sizeof(addr));
-    int connfd = ::accept4(sockfd_, (sockaddr *)&addr, &len, SOCK_NONBLOCK | SOCK_CLOEXEC);
+    int connfd = accept4(sockfd_, (sockaddr *)&addr, &len, SOCK_NONBLOCK | SOCK_CLOEXEC);
     // 当试图对该文件描述符进行读写时，如果当时没有东西可读，或者暂时不可写，程序就进入等待状态，
     // 直到有东西可读或者可写为止。而对于非阻塞状态，如果没有东西可读，或者不可写，读写函数马上返回，而不会等待。
     if (connfd >= 0)
@@ -64,26 +59,27 @@ void Socket::shutdownWrite()
         LOG_ERROR("shutdownWrite error");
     }
 }
+
 void Socket::setTcpNoDelay(bool on) // 不启用naggle算法，增大对小数据包的支持
 {
     int optval = on ? 1 : 0;
-    ::setsockopt(sockfd_, IPPROTO_TCP, TCP_NODELAY, &optval, sizeof(optval));
+    setsockopt(sockfd_, IPPROTO_TCP, TCP_NODELAY, &optval, sizeof(optval));
 }
 void Socket::setReuseAddr(bool on)
 {
     int optval = on ? 1 : 0;
-    ::setsockopt(sockfd_, SOL_SOCKET, SO_REUSEADDR, &optval, sizeof(optval));
+    setsockopt(sockfd_, SOL_SOCKET, SO_REUSEADDR, &optval, sizeof(optval));
     // SO_REUSEADDR允许在同一端口上启动同一服务器的多个实例，只要每个实例捆绑一个不同的本地IP地址即可。
 }
 void Socket::setReusePort(bool on)
 {
     int optval = on ? 1 : 0;
-    ::setsockopt(sockfd_, SOL_SOCKET, SO_REUSEPORT, &optval, sizeof(optval));
-    //
+    setsockopt(sockfd_, SOL_SOCKET, SO_REUSEPORT, &optval, sizeof(optval));
+    // 允许多个套接字（在同一IP地址和端口上绑定）可以同时监听相同的端口，即实现端口的共享
 }
 void Socket::setKeepAlive(bool on)
 {
     int optval = on ? 1 : 0;
-    ::setsockopt(sockfd_, SOL_SOCKET, SO_KEEPALIVE, &optval, sizeof(optval));
+    setsockopt(sockfd_, SOL_SOCKET, SO_KEEPALIVE, &optval, sizeof(optval));
     // TCP保活机制
 }
